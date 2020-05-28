@@ -127,12 +127,12 @@
 
 ## Level 13 -> 14
 
-    *locally*
+_locally_
     cd Desktop
     vim bandit_key
     sudo chmod 700 bandit_key
 
-    ssh -i /Users/lclose/Desktop/bandit_key -p 2220  bandit14@bandit.labs.overthewire.org
+    ssh -i ~/Desktop/bandit_key -p 2220  bandit14@bandit.labs.overthewire.org
 
 ## Level 14 -> 15
 
@@ -195,8 +195,72 @@ vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
 
     vim bandit_key_17
     sudo chmod 700 bandit_key_17
-    ssh -i /Users/lclose/Desktop/bandit_key_17 -p 2220  bandit17@bandit.labs.overthewire.org
+    ssh -i ~/Desktop/bandit_key_17 -p 2220  bandit17@bandit.labs.overthewire.org
 
 ## Level 17 -> 18
+
+    diff passwords.new passwords.old
+
+42c42
+< kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+---
+> w0Yfolrc5bwjS4qw5mq1nnQi6mF03bii
+
+    ssh -p 2220  bandit18@bandit.labs.overthewire.org
+    kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+
+## Level 18 -> 19
+
+Byebye !
+Connection to bandit.labs.overthewire.org closed.
+
+Unfortunately, someone has modified .bashrc to log you out when you log in with SSH.
+
+    scp -P 2220 bandit18@bandit.labs.overthewire.org:readme ~/Desktop/readme
+    kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+
+    cat Desktop/readme
+    IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+
+    ssh -p 2220  bandit19@bandit.labs.overthewire.org
+    IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+
+## Level 19 -> 20
+
+    ./bandit20-do
+
+Run a command as another user.
+Example: ./bandit20-do id
+
+    ./bandit20-do cat /etc/bandit_pass/bandit20
+
+    ssh -p 2220  bandit20@bandit.labs.overthewire.org
+    GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+
+## Level 20 -> 21
+
+    echo "GbKksEFF4yrVs6il55v6gwY5aVje5f0j" | nc -lp 39999 &
+    ./suconnect 39999
+
+Read: GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+Password matches, sending next password
+gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+
+    ssh -p 2220  bandit21@bandit.labs.overthewire.org
+    gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+
+
+
+## Level 21 -> 22
+
+    cd /etc/cron.d/
+    cat cronjob_bandit*
+
+
+
+
+
+
+
 
 
