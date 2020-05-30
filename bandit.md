@@ -555,8 +555,9 @@ f17132340e8ee6c159e0a4a6bc6f80e1da3b1aea refs/tags/secret
 
 ## Level 31 -> 32
 
-    mkdir /tmp/git14 && cd /tmp/git14
-    git clone 47e603bb428404d265f59c42920d81e5
+    mkdir /tmp/git && cd /tmp/git
+    git clone ssh://bandit31-git@localhost/home/bandit31-git/repo
+    47e603bb428404d265f59c42920d81e5
 
 This time your task is to push a file to the remote repository.
 
@@ -565,6 +566,61 @@ File name: key.txt
 Content: 'May I come in?'
 Branch: master
 
-    vim key.txt
+    vim key.txt 'May I come in?'
     git add key.txt
     git add -f key.txt
+    git commit
+    git push (fails)
+    vim .gitignore
+    git commit
+    git push ((fails))
+    rm key.txt
+    git add .
+    git commit
+    vim key.txt May I come in?
+
+remote: Well done! Here is the password for the next level:
+remote: 56a9bf19c63d650ce78e6ec0354ee45e
+
+    ssh -p 2220  bandit32@bandit.labs.overthewire.org
+    56a9bf19c63d650ce78e6ec0354ee45e
+
+## Level 32 -> 33
+
+WELCOME TO THE UPPERCASE SHELL
+>>
+
+    ls
+    cd
+    ls | sh
+    echo $shell
+    echo $PATH
+    #!/bin/sh echo ls >
+    $PATH ./usr/bin/sh sh
+    $@
+    $0
+    ls
+    cat uppershell
+    ls -la
+    cat /etc/bandit_pass/bandit33
+
+c9c3199ddf4121b10cf581a98d51caee
+
+    ssh -p 2220  bandit33@bandit.labs.overthewire.org
+    c9c3199ddf4121b10cf581a98d51caee
+
+## Level 32 -> 33
+
+    cat README.txt
+
+# The flag!
+
+Congratulations on solving the last level of this game!
+
+At this moment, there are no more levels to play in this game. However, we are constantly working
+on new levels and will most likely expand this game with more levels soon.
+Keep an eye out for an announcement on our usual communication channels!
+In the meantime, you could play some of our other wargames.
+
+If you have an idea for an awesome new level, please let us know!
+
