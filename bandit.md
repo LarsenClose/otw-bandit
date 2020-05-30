@@ -1,4 +1,5 @@
 # Bandit
+### Larsen Close CS390Y
 
 ## Level 0
 
@@ -201,10 +202,10 @@ vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
 
     diff passwords.new passwords.old
 
-42c42
-< kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
----
-> w0Yfolrc5bwjS4qw5mq1nnQi6mF03bii
+'42c42
+'< kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+'---
+'> w0Yfolrc5bwjS4qw5mq1nnQi6mF03bii
 
     ssh -p 2220  bandit18@bandit.labs.overthewire.org
     kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
@@ -609,7 +610,7 @@ c9c3199ddf4121b10cf581a98d51caee
     ssh -p 2220  bandit33@bandit.labs.overthewire.org
     c9c3199ddf4121b10cf581a98d51caee
 
-## Level 32 -> 33
+## Level 33 -> 34
 
     cat README.txt
 
